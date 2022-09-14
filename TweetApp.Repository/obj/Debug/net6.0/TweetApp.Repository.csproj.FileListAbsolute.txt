@@ -40,3 +40,17 @@ C:\PracticeJobs\UseCases\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debu
 C:\PracticeJobs\UseCases\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.pdb
 C:\PracticeJobs\UseCases\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.genruntimeconfig.cache
 C:\PracticeJobs\UseCases\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\ref\TweetApp.Repository.dll
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\bin\Debug\net6.0\TweetApp.Repository.deps.json
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\bin\Debug\net6.0\TweetApp.Repository.runtimeconfig.json
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\bin\Debug\net6.0\TweetApp.Repository.dll
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\bin\Debug\net6.0\TweetApp.Repository.pdb
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.csproj.AssemblyReference.cache
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.AssemblyInfoInputs.cache
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.AssemblyInfo.cs
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.csproj.CoreCompileInputs.cache
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.dll
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\refint\TweetApp.Repository.dll
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.pdb
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\TweetApp.Repository.genruntimeconfig.cache
+D:\React\UseCase-2\TweetApp\Backend\TweetApp.Repository\obj\Debug\net6.0\ref\TweetApp.Repository.dll

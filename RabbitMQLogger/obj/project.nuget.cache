@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9L+bf5lCPrQdsi5n5aHiWndSWF5cVsC0enSMSeqUvQdsrDtQkhzVDL/TgberqPjjj+7MyflQuZJUTZZt5jPqZQ==",
+  "dgSpecHash": "s+tZlAB8+vO4GWYYhgfvCgP1lO7GBajmQ95ec54+slanhgTxj5iJDR9OTX2gCxMwX0wTU2TLgk+zh5ImFPCwww==",
   "success": true,
-  "projectFilePath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\RabbitMQLogger\\RabbitMQLogger.csproj",
+  "projectFilePath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\RabbitMQLogger\\RabbitMQLogger.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ARUNAVA\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
-    "C:\\Users\\ARUNAVA\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
-    "C:\\Users\\ARUNAVA\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
+    "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\rabbitmq.client\\6.4.0\\rabbitmq.client.6.4.0.nupkg.sha512",
+    "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\system.threading.channels\\4.7.1\\system.threading.channels.4.7.1.nupkg.sha512"
   ],
   "logs": []
 }

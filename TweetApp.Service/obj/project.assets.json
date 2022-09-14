@@ -2172,19 +2172,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ARUNAVA\\.nuget\\packages\\": {}
+    "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\TweetApp.Service.csproj",
+      "projectUniqueName": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\TweetApp.Service.csproj",
       "projectName": "TweetApp.Service",
-      "projectPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\TweetApp.Service.csproj",
-      "packagesPath": "C:\\Users\\ARUNAVA\\.nuget\\packages\\",
-      "outputPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\obj\\",
+      "projectPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\TweetApp.Service.csproj",
+      "packagesPath": "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\",
+      "outputPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ARUNAVA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ashutosh Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2198,11 +2198,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj": {
-              "projectPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj"
+            "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj": {
+              "projectPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj"
             },
-            "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj": {
-              "projectPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj"
+            "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj": {
+              "projectPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj"
             }
           }
         }
@@ -2245,7 +2245,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

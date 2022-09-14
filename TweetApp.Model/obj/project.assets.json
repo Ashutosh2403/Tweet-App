@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Humanizer.Core/2.8.26": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Humanizer.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.5.0": {
         "type": "package",
         "compile": {
@@ -100,6 +109,22 @@
         },
         "runtime": {
           "lib/netstandard2.0/_._": {}
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Design/6.0.7": {
+        "type": "package",
+        "dependencies": {
+          "Humanizer.Core": "2.8.26",
+          "Microsoft.EntityFrameworkCore.Relational": "6.0.7"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
+        },
+        "build": {
+          "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
@@ -625,6 +650,22 @@
     }
   },
   "libraries": {
+    "Humanizer.Core/2.8.26": {
+      "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
+      "type": "package",
+      "path": "humanizer.core/2.8.26",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "humanizer.core.2.8.26.nupkg.sha512",
+        "humanizer.core.nuspec",
+        "lib/netstandard1.0/Humanizer.dll",
+        "lib/netstandard1.0/Humanizer.xml",
+        "lib/netstandard2.0/Humanizer.dll",
+        "lib/netstandard2.0/Humanizer.xml",
+        "logo.png"
+      ]
+    },
     "Microsoft.CSharp/4.5.0": {
       "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
@@ -821,6 +862,21 @@
         "lib/netstandard2.0/_._",
         "microsoft.entityframeworkcore.analyzers.6.0.7.nupkg.sha512",
         "microsoft.entityframeworkcore.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Design/6.0.7": {
+      "sha512": "chshSATT8ugtqCiYryx5qDefK99o2ojyMCOIlQgetDhe83czL9Sp7s1a5MkvUyN5D4F0Vv8gXU77Wv+cplUJuw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.design/6.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/net6.0/Microsoft.EntityFrameworkCore.Design.props",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll",
+        "lib/net6.0/Microsoft.EntityFrameworkCore.Design.xml",
+        "microsoft.entityframeworkcore.design.6.0.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.design.nuspec"
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/6.0.7": {
@@ -1885,24 +1941,25 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Microsoft.EntityFrameworkCore.Design >= 6.0.7",
       "System.ComponentModel.Annotations >= 5.0.0",
       "TweetApp.Repository >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ARUNAVA\\.nuget\\packages\\": {}
+    "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj",
+      "projectUniqueName": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj",
       "projectName": "TweetApp.Model",
-      "projectPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj",
-      "packagesPath": "C:\\Users\\ARUNAVA\\.nuget\\packages\\",
-      "outputPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\obj\\",
+      "projectPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\TweetApp.Model.csproj",
+      "packagesPath": "C:\\Users\\Ashutosh Kumar\\.nuget\\packages\\",
+      "outputPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Model\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ARUNAVA\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Ashutosh Kumar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1916,8 +1973,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj": {
-              "projectPath": "C:\\PracticeJobs\\UseCases\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj"
+            "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj": {
+              "projectPath": "D:\\React\\UseCase-2\\TweetApp\\Backend\\TweetApp.Repository\\TweetApp.Repository.csproj"
             }
           }
         }
@@ -1932,6 +1989,12 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.0.7, )"
+          },
           "System.ComponentModel.Annotations": {
             "target": "Package",
             "version": "[5.0.0, )"
@@ -1952,7 +2015,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

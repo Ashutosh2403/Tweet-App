@@ -17,12 +17,10 @@ namespace TweetApp.Api.Controllers
     {
         private readonly IServices _services;
         protected ResponseDto _response;
-        private readonly IRabbitMQMessageSender _messageSender;
-        public UsersController(IServices services,IRabbitMQMessageSender messageSender)
+        public UsersController(IServices services)
         {
             _services = services;
             _response = new ResponseDto();
-            _messageSender = messageSender;
         }
         [HttpGet("users/all")]
         public async Task<object> GetAllUsers()
@@ -39,7 +37,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Error cannot find the list";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -66,7 +63,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Error cannot register";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -92,7 +88,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while logging in.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -116,7 +111,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -143,7 +137,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 

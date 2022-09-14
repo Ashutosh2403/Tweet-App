@@ -15,12 +15,10 @@ namespace TweetApp.Api.Controllers
     {
         private readonly IServices _services;
         protected ResponseDto _response;
-        private readonly IRabbitMQMessageSender _messageSender;
-        public TweetsController(IServices services, IRabbitMQMessageSender messageSender)
+        public TweetsController(IServices services)
         {
             _services = services;
             _response = new ResponseDto();
-            _messageSender = messageSender;
         }
 
         [HttpPost("{username}/add")]
@@ -38,7 +36,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -57,7 +54,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -75,7 +71,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -99,7 +94,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while updating tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -123,7 +117,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while deleting tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -143,7 +136,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while replying the tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -163,7 +155,6 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while replying the tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
-            _messageSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
