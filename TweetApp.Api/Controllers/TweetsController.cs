@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using TweetApp.Api.RabbitMQSender;
-using TweetApp.Model.Api;
-using TweetApp.Model.Dto;
-using TweetApp.Service.Services.Interfaces;
+using TweetApp.MessegeSender;
+using TweetApp.TweetAppModel;
+using TweetApp.TweetAppModel.Dto;
+using TweetApp.TweetAppService.Services.Interfaces;
 
-namespace TweetApp.Api.Controllers
+namespace TweetApp.Controllers
 {
     [Route("api/v{version:apiVersion}/tweets")]
     [ApiController]
@@ -15,11 +15,16 @@ namespace TweetApp.Api.Controllers
     {
         private readonly IServices _services;
         protected ResponseDto _response;
-        public TweetsController(IServices services)
+        private readonly IKafkaSender _kafkaSender;
+
+        public TweetsController(IServices services, IKafkaSender kafkaSender)
         {
             _services = services;
             _response = new ResponseDto();
+            _kafkaSender = kafkaSender;
         }
+
+        #region Main Endpoints
 
         [HttpPost("{username}/add")]
         public async Task<object> PostTweet([FromRoute] string username, [FromBody] TweetCreateDto tweetDto)
@@ -36,10 +41,12 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            _kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
         [HttpGet("all")]
+        //[AllowAnonymous]
         public async Task<object> ViewAllTweets()
         {
             try
@@ -54,6 +61,7 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -71,6 +79,7 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong!";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -94,6 +103,7 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while updating tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -117,12 +127,12 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while deleting tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+           //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
         [HttpPost("{username}/reply/{id}")]
-        public async Task<object> ReplyTweet([FromRoute] string username, [FromRoute] int id
-            , [FromBody] Body body)
+        public async Task<object> ReplyTweet([FromRoute] string username, [FromRoute] int id, [FromBody] Body body)
         {
             try
             {
@@ -136,6 +146,7 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while replying the tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
 
@@ -155,8 +166,13 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while replying the tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+           //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
+
+        #endregion
+
+        #region Helper Endpoints
 
         [HttpGet("details/{id}")]
         public async Task<object> GetATweet(int id)
@@ -176,47 +192,9 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong while displaying the tweet! Please try again later.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
-
-        [HttpGet("like/{id}")]
-        public async Task<object> GetLikeCountOfTweet(int id)
-        {
-            try
-            {
-                var likes = await _services.TweetService.CountLikes(id);
-                _response.Result = likes;
-                _response.DisplayMessage = "Tweet Count fetched successfully";
-            }
-            catch (Exception ex)
-            {
-                _response.Result = false;
-                _response.IsSuccess = false;
-                _response.DisplayMessage = "Something went wrong.";
-                _response.ErrorMessages = new List<string> { ex.Message };
-            }
-            return _response;
-        }
-
-        [HttpGet("reactions")]
-        public async Task<object> GetAllReactions()
-        {
-            try
-            {
-                var responses = await _services.TweetService.GetReactionsList();
-                _response.Result = responses;
-                _response.DisplayMessage = "Reactions fetched";
-            }
-            catch (Exception ex)
-            {
-                _response.Result = false;
-                _response.IsSuccess = false;
-                _response.DisplayMessage = "Something went wrong.";
-                _response.ErrorMessages = new List<string> { ex.Message };
-            }
-            return _response;
-        }
-
         [HttpGet("replies")]
         public async Task<object> GetAllReplies()
         {
@@ -233,7 +211,28 @@ namespace TweetApp.Api.Controllers
                 _response.DisplayMessage = "Something went wrong.";
                 _response.ErrorMessages = new List<string> { ex.Message };
             }
+            //_kafkaSender.Publish(_response.DisplayMessage);
             return _response;
         }
+        [HttpGet("reactions")]
+        public async Task<object> GetAllReactions()
+        {
+            try
+            {
+                var responses = await _services.TweetService.GetReactionsList();
+                _response.Result = responses;
+                _response.DisplayMessage = "Reactions fetched";
+            }
+            catch (Exception ex)
+            {
+                _response.Result = false;
+                _response.IsSuccess = false;
+                _response.DisplayMessage = "Something went wrong.";
+                _response.ErrorMessages = new List<string> { ex.Message };
+            }
+            //_kafkaSender.Publish(_response.DisplayMessage);
+            return _response;
+        }
+        #endregion
     }
 }

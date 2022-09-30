@@ -1,0 +1,30 @@
+{
+  "dependencies": {},
+  "parameters": {
+    "TweetAppApi20220915121820.resourceName": {
+      "Name": "TweetAppApi20220915121820.resourceName",
+      "Type": null,
+      "Value": "TweetAppApi20220915121820"
+    },
+    "TweetAppApi20220915121820.resourceGroupLocation": {
+      "Name": "TweetAppApi20220915121820.resourceGroupLocation",
+      "Type": null,
+      "Value": "eastasia"
+    },
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "e75cbd54-e021-46be-a329-78d4565e2f93"
+    },
+    "TweetAppApi20220915121820.resourceGroupName": {
+      "Name": "TweetAppApi20220915121820.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "DefaultResourceGroup-EA"
+    },
+    "TweetAppApi20220915121820.subscriptionId": {
+      "Name": "TweetAppApi20220915121820.subscriptionId",
+      "Type": "subscription",
+      "Value": "e75cbd54-e021-46be-a329-78d4565e2f93"
+    }
+  }
+}
